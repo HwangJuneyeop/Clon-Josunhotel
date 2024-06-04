@@ -1,2 +1,0 @@
-# clon-JosunHotel
-clon-JosunHotel
