@@ -1,0 +1,164 @@
+@charset "utf-8";
+@import url(fonts.css);
+
+.mainbg {
+    position: relative;
+    background: url(../img/sub_josunpalace/main.jpg)no-repeat center/cover;
+    opacity: 2;
+    width: 100%;
+    height: 100vh;
+}
+
+.main_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.main_text span {
+    font-family: Pretendard, notokrL;
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+
+.main_text h2 {
+    font: 400 80px playfair, notokrR;
+    letter-spacing: -1px;
+    color: #fff;
+}
+
+.main_btn {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.main_btn button {
+    background: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.info {
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 60px;
+    margin-bottom: 200px;
+}
+.info .tit {
+    display: block;
+    padding: 143px 0 13px;
+    font: 24px / 1.62 Pretendard, notokrM;
+    letter-spacing: -.01em;
+    color:#000;
+}
+.info p {
+    font: 400 18px / 1.8 Pretendard;
+    letter-spacing: -1px;
+    color: #000;
+    word-break: keep-all;
+}
+.info strong {
+    position: relative;
+    display: block;
+    font: 500 130px / 1.46 playfair;
+    text-transform: capitalize;
+    color: #c0a75a;
+}
+.info strong::before {
+    content: '';
+    position: absolute;
+    right: 2px; top:100px;
+    width: 400px;
+    height: 3px;
+    background:#c0a75a;
+}
+.info .info_time {
+    position: relative;
+    display: block;
+    text-align: right;
+    color: #c0a75a;
+    font: 400 18px / 1.8 Pretendard;
+    letter-spacing: -.01em;
+    text-align: right;
+}
+.info .info_time::after{
+    content: '';
+    position: absolute;
+    left: 0; top: 15px;
+    width: 86%;
+    height: 3px;
+    background:#c0a75a;
+}
+
+/* hotel_story */
+.inner {
+    height: 155vh;
+}
+.hotel_story{
+    background: #c0a75a;
+    padding: 106px 0 103px;
+    height: 500px;
+
+}
+.story_text{
+    width:1400px;
+    margin: 0 auto;
+}
+.hotel_story h3 {
+    font: 500 30px / 1.62 Pretendard, notokrR;
+    letter-spacing: -.01em;
+    color:#fff;
+}
+.hotel_story p {
+    margin-bottom: 63px;
+    font: 400 18px / 1.8 Pretendard;
+    color:#fff;
+}
+
+.experience {
+    width: 1400px;
+    margin: 0 auto;
+}
+.experience h3 {
+    margin-bottom: 54px;
+    font: 500 36px / 1.8 Pretendard, notokrR;
+    letter-spacing: -.01em;
+    color:#000;
+}
+.experience_box {
+    display: flex;
+}
+.experience_box ul li strong {
+    display: block;
+    margin: 5px 0;
+    font: 500 20px / 1.8 Pretendard;
+    letter-spacing: -1px;
+    color:#000;
+}
+.experience_box ul {
+    margin-right: 200px;
+}
+.experience_box ul li{
+    position: relative;
+}
+.experience_box figcaption{
+    position: absolute;
+    top:0; right: -30px;
+    color: #d19dae;
+    transform: rotate(90deg) translateX(100%);
+    transform-origin: right top;
+    -ms-transform: rotate(90deg) translateX(100%);
+    -ms-transform-origin: right top;
+    font: 16px Pretendard;
+    letter-spacing: 1.5px;
+}
+.experience_box ul li p {
+    font: 400 18px / 1.8 Pretendard;
+    margin-bottom: 30px;
+}

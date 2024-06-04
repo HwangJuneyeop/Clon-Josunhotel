@@ -1,0 +1,193 @@
+@charset "utf-8";
+@import url(fonts.css);
+
+
+.inner {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.main_text {
+    padding-top: 230px;
+    padding-bottom: 200px;
+}
+
+.main_text h2 {
+    font: 500 60px playfair;
+    font-feature-settings: 'lnum', 'pnum';
+    color: #000;
+}
+
+.main_text p {
+    margin-top: 18px;
+    font-size: 20px;
+    letter-spacing: -.01em;
+}
+.keyword {
+    margin-top: 20px;
+}
+.keyword .location_txt{
+    width: 180px;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    margin-top: 40px;
+    border: 1px solid #000;
+    font: 400 15px / 1 notokrL;
+    text-align: center;
+}
+.location {
+    width: 180px;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    margin-top: 40px;
+    color: #fff;
+    font: 400 15px / 1 notokrL;
+    text-align: center;
+}
+.location.red {
+    background: #d20a10;
+}
+
+.location.para {
+    background: #5f7654;
+}
+
+.location.grp {
+    background: #000000;
+}
+
+.location.grand {
+    background: #c79689;
+}
+.package1, .package2, .package3{
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+.package1.show{
+    opacity: 1;
+}
+.package2{
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+.package2.show{
+    opacity: 1;
+}
+.package3{
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+.package3.show{
+    opacity: 1;
+}
+.package_box .package4 {
+    display: none;
+}
+.package_box ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.package_box ul li h3 {
+    font: 500 40px playfair, notokrR;
+    color:#000;
+    margin:20px 0;
+    font-feature-settings: 'lnum', 'pnum';
+}
+.package_box ul li p {
+    font: 400 18px Pretendard;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.period {
+    font: 400 18px Pretendard;
+}
+.package_box ul li em {
+    font: 400 18px Pretendard;
+}
+
+.package_bot {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.pay strong {
+    font-size: 50px;
+    font-weight: 400;
+    font-family: playfair;
+    color: #000;
+}
+.pay em {
+    font-size: 20px;
+    color:#000;
+}
+.btn{
+    display: flex;
+    align-items: center;
+}
+.btn .heart {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 2;
+}
+.heart::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 15px;
+    width: 24px;
+    height: 20px;
+    background: url(../img/sub_package/ico_bookmark.png) no-repeat 0 0;
+}
+.view {
+    min-width: 162px;
+    height: 50px;
+    padding: 0 25px;
+    line-height: 47px;
+    font-size: 17px;
+    letter-spacing: -.01em;
+    background: #000 ;
+    color: #fff ;
+    border: 1px solid #000;
+    margin-left: 10px;
+    transition: all .3s;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* 추가 */
+}
+.view::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    background: #fff;
+    width: 130%;
+    height: 100%;
+    transform: skewX(-16deg);
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+}
+.view:hover{
+    color:#000;
+}
+.view:hover:after {
+    left:-5%;
+}
+.more_box {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin: 150px 0;
+}
+.btn_more {
+    background: inherit;
+    border: none;
+    font: 300 20px Pretendard;
+    border-bottom: 1px solid black;
+    line-height: 2.5;
+    cursor: pointer; 
+}

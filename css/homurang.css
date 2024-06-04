@@ -1,0 +1,106 @@
+@charset "utf-8";
+@import url(fonts.css);
+.inner {
+    width: 1400px;
+    margin: 0 auto 200px;
+}
+.mainbg{
+    background:url(../img/sub_homurang/main.jpg)no-repeat center/cover ;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.main_text {
+    position: absolute;
+    top:50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.main_text h2{
+    font: 400 80px playfair, notokrR;
+    letter-spacing: -1px;
+    color: #fff;
+}
+.main_text p {
+    margin-top: 35px;
+    font-size: 20px;
+    font-family: notokrL;
+    color: #fff;
+}
+.mainbg .main_btn{
+    position: absolute;
+    bottom:50px; left:50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.reservation {
+    width: 100%;
+    height: 100px;
+    background: #f9f9f9;
+    position: relative;
+    transition: all .1s;
+}
+.reservation.on {
+    position: fixed;
+    top: 99px;
+    z-index: 9999;
+    width: 100%;
+  }
+.btn_reservation {
+    position: absolute;
+    top:20px; right: 15%;
+    background:#000;
+    color:#fff;
+    padding: 15px 60px;
+    font-size: 18px;
+}
+.info {
+    margin-top: 80px;
+}
+.info_box {
+    display: flex;
+    justify-content: space-between;
+}
+.info_box li {
+    width: 50%;
+    margin-bottom: 50px;
+}
+.info_box li p {
+    font-size: 16px;
+    font-weight: 600;
+    color:#000;
+}
+.info_box em{
+    display: block;
+    font-size: 18px;
+    font-weight: 300;
+    color:#000;
+    margin-top: 10px;
+}
+.info_box a {
+    display: block;
+    text-decoration: underline;
+    color:#000;
+    margin-top: 10px;
+}
+
+
+.img_info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.img_info li {
+    width: 50%;
+}
+.img_info h3{
+    font: 600 30px / 1.5 notokrM;
+    color:#000;
+}
+.img_info p {
+    font: 400 16px / 1.8 notokrL;
+    letter-spacing: -0.2px;
+}
