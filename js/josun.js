@@ -147,13 +147,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //main_left 클릭시 화면 이동
-$(document).ready(function ($) {
+/* $(document).ready(function ($) {
   $(".panel").click(function (event) {
     event.preventDefault();
     $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 500);
   });
-
-});
+}); */
 
 //타입2 영역
 $(document).ready(function () {
