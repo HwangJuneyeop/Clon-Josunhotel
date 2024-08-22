@@ -1,3 +1,92 @@
+//GSAP 스크롤티거
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+
+document.addEventListener("DOMContentLoaded", (event) => {
+
+  let panels = gsap.utils.toArray(".panel"),
+    observer = ScrollTrigger.normalizeScroll(true),
+    scrollTween;
+
+  document.addEventListener("touchstart", e => {
+    if (scrollTween) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+  }, { capture: true, passive: false })
+
+  function goToSection(i) {
+    scrollTween = gsap.to(window, {
+      scrollTo: { y: i * innerHeight, autoKill: false },
+      onStart: () => {
+        observer.disable();
+        observer.enable();
+      },
+      duration: 1,
+      onComplete: () => scrollTween = null,
+      overwrite: true
+    });
+  }
+
+  panels.forEach((panel, i) => {
+    ScrollTrigger.create({
+      trigger: panel,
+      start: "top bottom",
+      end: "+=199%",
+      onToggle: self => self.isActive && !scrollTween && goToSection(i)
+    });
+  });
+
+
+  ScrollTrigger.create({
+    start: 0,
+    end: "#footer",
+    snap: 1 / (panels.length - 1)
+  })
+});
+
+
+
+
+
+/* 스와이퍼 슬라이드 */
+$('.slider').slick({
+  infinite: false,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  prevArrow: $('.prevArrow'),
+  nextArrow: $('.nextArrow'),
+});
+$('.slider_lg').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  prevArrow: $('.prevArrow_lg'),
+  nextArrow: $('.nextArrow_lg'),
+});
+$('.slider').on('afterChange', function (event, slick, currentSlide) {
+  if (currentSlide === 0) {
+    $('.prevArrow').hide();
+  } else {
+    $('.prevArrow').show();
+  }
+  if (currentSlide === slick.slideCount - slick.options.slidesToShow) {
+    $('.nextArrow').hide();
+  } else {
+    $('.nextArrow').show();
+  }
+});
+$('.prevArrow').hide();
+
+var swiper = new Swiper(".mySwiper", {
+  effect: 'fade',
+  fadeEffect: { crossFade: true },
+
+  navigation: {
+    nextEl: ".nextArrow_ht",
+    prevEl: ".prevArrow_ht"
+  }
+});
+
 /* 스타일1 gnb */
 $(document).ready(function () {
   $(".btnmenu").click(function () {
@@ -126,33 +215,12 @@ $(function () {
     $('.btn_EN').toggleClass('active')
   })
 })
-$(document).ready(function () {
-  $('.selecthotel').click(function () {
-    $('.hotel_list').slideDown();
-    $('.selectRoom').css("bottom", '15%')
-  });
-  $('.hotel_close').click(function (event) {
-    event.stopPropagation(); // 이벤트 전파 중지
-    $('.hotel_list').slideUp();
-    $('.selectRoom').css("bottom", "30%")
-  })
-});
 
 // 텍스트가 서서히 나타나게하기
 document.addEventListener("DOMContentLoaded", function () {
   var text = document.querySelector(".main_text");
-  var room = document.querySelector(".selectRoom")
   text.classList.add("show");
-  room.classList.add("show")
 });
-
-//main_left 클릭시 화면 이동
-/* $(document).ready(function ($) {
-  $(".panel").click(function (event) {
-    event.preventDefault();
-    $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 500);
-  });
-}); */
 
 //타입2 영역
 $(document).ready(function () {
@@ -163,6 +231,7 @@ $(document).ready(function () {
     start: "top center",
     onEnter: function () {
       $(".btnmenu").css("display", "none")
+      $(".btnmenu").css("background-position", "-1px");
       $(".btnblack").css("display", "block")
       $(".btn_close").css("display", "none")
       $(".btn_close2").css("display", "block")
@@ -184,6 +253,7 @@ $(document).ready(function () {
     },
     onLeaveBack: function () {
       $(".btnmenu").css("display", "block")
+      $(".btnmenu").css("background-position", "-1px");
       $(".btnblack").css("display", "none")
       $(".btn_close").css("display", "block")
       $(".btn_close2").css("display", "none")
@@ -214,6 +284,7 @@ $(document).ready(function () {
     start: "top center",
     onEnter: function () {
       $(".btnmenu").css("display", "none")
+      $(".btnmenu").css("background-position", "-1px");
       $(".btnblack").css("display", "block")
       $(".btn_close").css("display", "none")
       $(".btn_close2").css("display", "block")
@@ -224,6 +295,7 @@ $(document).ready(function () {
     },
     onLeaveBack: function () {
       $(".btnmenu").css("display", "none")
+      $(".btnmenu").css("background-position", "-1px");
       $(".btnblack").css("display", "block")
       $(".btn_close").css("display", "none")
       $(".btn_close2").css("display", "block")
@@ -243,6 +315,7 @@ $(document).ready(function () {
     start: "top center",
     onEnter: function () {
       $(".btnmenu").css("display", "none")
+      $(".btnmenu").css("background-position", "-1px");
       $(".btnblack").css("display", "block")
       $(".btn_close").css("display", "none")
       $(".btn_close2").css("display", "block")
@@ -254,6 +327,7 @@ $(document).ready(function () {
     },
     onLeaveBack: function () {
       $(".btnmenu").css("display", "none")
+      $(".btnmenu").css("background-position", "-1px");
       $(".btnblack").css("display", "block")
       $(".btn_close").css("display", "none")
       $(".btn_close2").css("display", "block")
@@ -265,7 +339,7 @@ $(document).ready(function () {
   });
 });
 
-/* 타입4 */
+/* 타입5 */
 $(document).ready(function () {
   var type5Section = $(".type5");
 
@@ -292,6 +366,7 @@ $(document).ready(function () {
       $(".main_left ul .left4").removeClass("on");
     },
     onLeaveBack: function () {
+      $(".btnblack").css("display", "block")
       $(".btnmenu").css("background-position", "-36px");
       $(".gnb_area").css("background", "white");
       $(".btn_opner").css("color", "black");
@@ -305,6 +380,7 @@ $(document).ready(function () {
       $(".main_left ul .left5").removeClass("on");
       $(".main_left ul .left4").addClass("on")
       $(".left_box").addClass("st1")
+      $(".btnblack").css("display", "none");
     }
   });
 });
@@ -331,153 +407,128 @@ $(document).ready(function () {
   });
 });
 
-//footer 영역
-$(document).ready(function () {
-  var type7Section = $(".type7");
 
-  ScrollTrigger.create({
-    trigger: type7Section,
-    start: "top center",
-    onEnter: function () {
-      $(".main_left ul .left6").addClass("on");
-      $(".main_left ul .left5").removeClass("on")
-      $(".left_box").addClass("st1")
-    },
-    onLeaveBack: function () {
-      $(".main_left ul .left6").removeClass("on");
-      $(".main_left ul .left5").addClass("on")
-      $(".left_box").removeClass("st1")
-      $(".btnmenu").css({
-        "display": "block",
-        "transform": "rotate(0deg)",
-        "background-position": "0"
-      });
-      $(".btnblack").css("display", "none")
-    }
-  });
-});
 // 타입 6 hover하면 배경이미지 변경
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
+  var $businessElement = $('.business');
 
-  var list2 = document.querySelector('.list2');
-  var list3 = document.querySelector('.list3');
-  var list4 = document.querySelector('.list4');
-  var list5 = document.querySelector('.list5');
-  var list6 = document.querySelector('.list6');
-  var list7 = document.querySelector('.list7');
-  var list8 = document.querySelector('.list8');
+  $('.list2').hover(
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business2.jpg)'
+      });
+    },
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business1.jpg)'
+      });
+    }
+  );
 
-  list2.addEventListener('mouseenter', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business2.jpg)';
-  });
+  $('.list3').hover(
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business3.jpg)'
+      });
+    },
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business1.jpg)'
+      });
+    }
+  );
 
-  list2.addEventListener('mouseleave', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business1.jpg)';
-  });
+  $('.list4').hover(
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business4.jpg)'
+      });
+    },
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business1.jpg)'
+      });
+    }
+  );
 
+  $('.list5').hover(
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business5.jpg)'
+      });
+    },
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business1.jpg)'
+      });
+    }
+  );
 
-  list3.addEventListener('mouseenter', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business3.jpg)';
-  });
+  $('.list6').hover(
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business6.jpg)'
+      });
+    },
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business1.jpg)'
+      });
+    }
+  );
 
-  list3.addEventListener('mouseleave', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business1.jpg)';
-  });
+  $('.list7').hover(
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business7.jpg)'
+      });
+    },
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business1.jpg)'
+      });
+    }
+  );
 
-
-  list4.addEventListener('mouseenter', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business4.jpg)';
-  });
-
-  list4.addEventListener('mouseleave', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business1.jpg)';
-  });
-
-  list5.addEventListener('mouseenter', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business5.jpg)';
-  });
-
-  list5.addEventListener('mouseleave', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business1.jpg)';
-  });
-
-
-  list6.addEventListener('mouseenter', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business6.jpg)';
-  });
-
-  list6.addEventListener('mouseleave', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business1.jpg)';
-  });
-
-
-  list7.addEventListener('mouseenter', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business7.jpg)';
-  });
-
-  list7.addEventListener('mouseleave', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business1.jpg)';
-  });
-
-
-  list8.addEventListener('mouseenter', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s ease';
-    businessElement.style.background = 'url(img/business8.jpg)';
-  });
-
-  list8.addEventListener('mouseleave', function () {
-    var businessElement = document.querySelector('.business');
-    businessElement.style.transition = 'background 0.3s fadeOut';
-    businessElement.style.background = 'url(img/business1.jpg)';
-  });
-});
-
-
-
-/* footer 영역 */
-window.addEventListener('scroll', function () {
-  var footer = document.getElementById('footer');
-  var scrollY = window.scrollY || window.pageYOffset; //4596
-  var scrollThreshold = 4800; // 스크롤 임계값 4595
-  if (scrollY > scrollThreshold) {
-    footer.classList.add('open');
-  } else {
-    footer.classList.remove('open');
-  }
+  $('.list8').hover(
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s ease',
+        'background': 'url(img/business8.jpg)'
+      });
+    },
+    function () {
+      $businessElement.css({
+        'transition': 'background 0.3s fadeOut',
+        'background': 'url(img/business1.jpg)'
+      });
+    }
+  );
 });
 
 
 //family site 클릭시 메뉴 슬라이드 업
-$(function(){
-  $('.btn_family').on('click',function(){
+$(function () {
+  $('.btn_family').on('click', function () {
     $('.item_list').slideToggle();
-    $(this).find('img').attr('src', function(index, attr) {
+    $(this).find('img').attr('src', function (index, attr) {
       return attr === 'img/chevron-down.png' ? 'img/chevron-up.png' : 'img/chevron-down.png';
     });
   })
 })
+
+
+
+ 

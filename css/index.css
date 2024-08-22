@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url(fonts.css);
+
 @keyframes scrollDown {
   0% {
     opacity: 1;
@@ -10,7 +11,11 @@
 html,
 body {
   height: auto;
-  font-family: notokrL,Pretendard, playfair;
+  font-family: notokrL, Pretendard, playfair;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .panel {
@@ -72,12 +77,13 @@ body {
   width: 30px;
   height: 35px;
   margin: 0 auto;
-  background: url(../img/btn_menu.png) no-repeat -35px 0;
+  background: url(../img/btn_menu.png) no-repeat 0 0;
   transition: .5s;
   background-position: 0;
   border: none;
   cursor: pointer;
 }
+
 .btnblack {
   display: none;
   z-index: 1;
@@ -214,11 +220,13 @@ body {
   color: #000;
   transition: all 0.3s;
 }
+
 .main_left ul li {
   font: 600 12px / 38px Pretendard;
   color: #cccccc;
   opacity: 0;
 }
+
 .main_left ul .left1.on::before {
   content: '';
   display: block;
@@ -250,6 +258,7 @@ body {
   opacity: 1;
   color: #000;
 }
+
 .main_left ul .left3.on::before {
   content: '';
   display: block;
@@ -265,6 +274,7 @@ body {
   opacity: 1;
   color: #000;
 }
+
 .main_left ul .left4.on::before {
   content: '';
   display: block;
@@ -275,10 +285,12 @@ body {
   height: 15%;
   background: #000;
 }
+
 .main_left ul .left4.on {
   opacity: 1;
-  color:#000;
+  color: #000;
 }
+
 .main_left ul .left5.on::before {
   content: '';
   display: block;
@@ -294,6 +306,7 @@ body {
   opacity: 1;
   color: #fff;
 }
+
 .main_left ul .left6.on::before {
   content: '';
   display: block;
@@ -304,6 +317,7 @@ body {
   height: 15%;
   background: #fff;
 }
+
 .main_left ul .left6.on {
   opacity: 1;
   color: #fff;
@@ -338,6 +352,7 @@ body {
   margin-left: 75%;
   cursor: pointer;
 }
+
 .drop_head .btn_close2 {
   display: none;
   margin-left: 75%;
@@ -350,12 +365,14 @@ body {
   width: 80%;
   margin: 30px auto 0;
 }
-.drop_menu .movement{
+
+.drop_menu .movement {
   color: #fff;
   font-size: 18px;
   padding-top: 20px;
   cursor: pointer;
 }
+
 .drop_menu h3 {
   color: #989442;
   font-size: 15px;
@@ -367,6 +384,7 @@ body {
   color: #999;
   padding-top: 20px;
 }
+
 .drop_menu p {
   margin: 3px 0;
 }
@@ -537,26 +555,32 @@ body {
   height: 250px;
   cursor: pointer;
 }
-.hover_bg{
+
+.hover_bg {
   position: absolute;
-  top:0; left:0;
+  top: 0;
+  left: 0;
   width: 360px;
   height: 250px;
   background: #797864;
   z-index: 1;
   opacity: 0;
 }
-.slide:hover .hover_bg{
+
+.slide:hover .hover_bg {
   opacity: .8;
 }
+
 .hover_text {
   position: absolute;
-  top:50%; left:50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  color:#fff;
+  color: #fff;
   border: 1px solid #fff;
   padding: 20px 40px;
 }
+
 .prevArrow {
   position: absolute;
   top: 50%;
@@ -595,7 +619,7 @@ body {
 }
 
 .lounge h4 {
-  color:#000;
+  color: #000;
   font: 500 40px playfair;
   padding-bottom: 20px;
   letter-spacing: 10px;
@@ -674,25 +698,30 @@ body {
   margin-top: 40px;
   position: relative;
 }
+
 .slide_lg img {
   display: block;
   width: 360px;
   height: 290px;
   cursor: pointer;
 }
-.hover_lg{
+
+.hover_lg {
   display: block;
   position: absolute;
-  top:0; left: 0;
+  top: 0;
+  left: 0;
   background: #555;
   opacity: 0;
   z-index: 1;
   width: 360px;
   height: 290px;
 }
+
 .slide_lg:hover .hover_lg {
   opacity: 0.8;
 }
+
 .prevArrow_lg {
   position: absolute;
   top: 50%;
@@ -718,11 +747,13 @@ body {
 .panel.type4 {
   position: relative;
 }
-.club{
+
+.club {
   background: url(../img/bg_main02.jpg)no-repeat center/cover;
   width: 100%;
   height: 100vh;
 }
+
 .club_box {
   position: absolute;
   top: 38%;
@@ -734,15 +765,17 @@ body {
   opacity: 0;
   transition: all 0.8s;
 }
-.club h4{
-  color:#000;
+
+.club h4 {
+  color: #000;
   font: 500 60px playfair;
   padding-bottom: 20px;
   display: block;
   text-align: center;
   margin-top: 110px;
 }
-.club_text{
+
+.club_text {
   color: #333;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -754,16 +787,19 @@ body {
   word-break: keep-all;
   word-wrap: break-word;
 }
-.club_button{
+
+.club_button {
   width: 100%;
   text-align: center;
 }
-.club button:nth-child(2){
+
+.club button:nth-child(2) {
   margin-left: 20px;
 }
+
 .club button {
-  background:#fff;
-  border:1px solid #000;
+  background: #fff;
+  border: 1px solid #000;
   min-width: 162px;
   height: 50px;
   padding: 0 25px;
@@ -777,12 +813,14 @@ body {
 .panel.type5 {
   position: relative;
 }
-.hotel{
+
+.hotel {
   background: url(../img/bg_main03.jpg)no-repeat center/cover;
   width: 100%;
   height: 100vh;
   position: relative;
 }
+
 .hotel_box {
   position: absolute;
   top: 50%;
@@ -792,33 +830,39 @@ body {
   height: 550px;
   background-color: #fff;
 }
-.hotel_box h4{
+
+.hotel_box h4 {
   font: 400 60px playfair;
-  color:#000;
+  color: #000;
   text-align: center;
   margin-top: 50px;
 }
-.hotel_box .hotel_text{
+
+.hotel_box .hotel_text {
   color: #333;
   overflow: hidden;
   text-overflow: ellipsis;
-  font : 400 20px Pretendard;
+  font: 400 20px Pretendard;
   margin-top: 10px;
   text-align: center;
   word-break: keep-all;
   word-wrap: break-word;
 }
+
 .hotel_img {
   text-align: center;
   margin-top: 30px;
 }
+
 .hotel_img img {
   opacity: .45;
   margin: 30px 0 20px;
 }
-.hotel_img img:hover{
+
+.hotel_img img:hover {
   opacity: 1;
 }
+
 .prevArrow_ht {
   position: absolute;
   top: 50%;
@@ -844,6 +888,7 @@ body {
   width: 100%;
   height: 100vh;
 }
+
 .hotel_box2 {
   position: absolute;
   top: 50%;
@@ -853,16 +898,18 @@ body {
   height: 550px;
   background-color: #fff;
 }
-.hotel_box2 h4{
-  font-size:  60px;
+
+.hotel_box2 h4 {
+  font-size: 60px;
   font-weight: 400;
   font-family: playfair;
   display: block;
   text-align: center;
   margin-top: 50px;
-  color:#000;
+  color: #000;
 }
-.hotel_box2 .hotel_text2{
+
+.hotel_box2 .hotel_text2 {
   color: #333;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -872,26 +919,29 @@ body {
   word-break: keep-all;
   word-wrap: break-word;
 }
-.hotel_box2 .txt1{
+
+.hotel_box2 .txt1 {
   font: 400 25px Pretendard;
   margin-top: 30px;
   text-align: center;
   line-height: 1.5;
 }
 
-.hotel_box2 .txt2{
+.hotel_box2 .txt2 {
   font: 400 20px Pretendard;
   margin: 3px 0 40px;
   text-align: center;
   line-height: 1.5;
 }
-.btn_box{
+
+.btn_box {
   width: 100%;
   text-align: center;
 }
+
 .hotel_box2 .btn_ht {
-  background:#fff;
-  border:1px solid #000;
+  background: #fff;
+  border: 1px solid #000;
   min-width: 162px;
   height: 50px;
   padding: 0 25px;
@@ -905,12 +955,14 @@ body {
 .panel.type6 {
   position: relative;
 }
-.business{
+
+.business {
   background: url(../img/business1.jpg)no-repeat center/cover;
   width: 100%;
   height: 100vh;
   position: relative;
 }
+
 .business_box {
   position: absolute;
   top: 50%;
@@ -919,16 +971,18 @@ body {
   width: 60%;
   height: 550px;
 }
-.business_box h4{
+
+.business_box h4 {
   display: block;
   text-align: center;
   margin-top: 50px;
-  color:#fff;
+  color: #fff;
   font: 500 60px playfair;
-  color:#fff;
+  color: #fff;
   font-feature-settings: 'lnum', 'pnum';
 }
-.business_box .business_text{
+
+.business_box .business_text {
   color: #333;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -939,148 +993,44 @@ body {
   word-break: keep-all;
   word-wrap: break-word;
   margin: 25px 0 70px;
-  color:#fff;
+  color: #fff;
   line-height: 1.8;
 }
+
 .business_list {
   display: flex;
   flex-wrap: wrap;
   width: 980px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
-.business_list li{
-  border: 1px solid rgba(255,255,255,0.2);
+
+.business_list li {
+  border: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
   width: 24%;
   height: 120px;
   padding-top: 40px;
 }
+
 .business_list li img {
   opacity: .4;
 }
+
 .business_list li:hover {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
 }
+
 .business_list li:hover img {
   margin-top: -10px;
   opacity: 1;
 }
-.business_list li:hover .s_text{
+
+.business_list li:hover .s_text {
   opacity: 1;
 }
+
 .business_list li .s_text {
-  color:rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: underline;
   opacity: 0;
-}
-
-.type7 {
-  height: 100px;
-}
-#footer{
-  position: fixed;
-  bottom: 0;
-  width:100%;
-  background:#000;
-  height: 35vh;
-  transition: transform 0.5s ease; 
-  transform: translateY(40vh);
-  z-index: 100;
-}
-#footer.open {
-  transform: translateY(0); 
-}
-.ft_img{
-  width:90%;
-  text-align: center;
-  margin: 0 auto;
-}
-.ft_img img{
-  padding:40px 20px;
-  box-sizing: border-box;
-}
-.ft_logo{
-  width:20%;
-}
-.ft_logo >img {
-  display: inline-block;
-}
-.ft_bot{
-  width: 78%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-}
-.ft_info{
-  width:70%;
-  color:#fff;
-}
-.ft_info a{
-  margin-right: 20px;
-  font-size: 14px;
-}
-.info_bot{
-  margin-top:15px;
-  color:#fff;
-}
-.info_bot a {
-  margin-top: 20px;
-}
-.address{
-  font: 400 14px / 1.8 notokrL;
-  color: #fff;
-  opacity: .5;
-  margin-top: 20px;
-}
-.address_top{
-  display: flex;
-}
-.sns_box{
-  position: relative;
-}
-.sns_box button{
-  position: relative;
-  background: inherit;
-  color: #fff;
-  opacity: .5;
-  border:none;
-  border-bottom: 1px solid #fff;
-  width:200px;
-  font-size: 20px;
-  text-align: left;
-}
-.site_down{
-  position: absolute;
-  right: 3px;
-  width:18px;
-  height: 18px;
-}
-.sns_img{
-  margin-top: 30px;
-}
-.sns_img img{
-  margin-right: 10px;
-}
-
-.item_list {
-  position: absolute;
-  bottom:170px; left: 5px;
-  background: #000;
-  color:#fff;
-  width:100%;
-  border: 1px solid #4d4d4d;
-  padding: 12px 0;
-  display: none;
-}
-.item_list a{
-  display: block;
-  width: 100%;
-  padding: 10px 16px;
-  border: 0;
-  background: transparent;
-  font-size: 12px;
-  line-height: 1;
-  text-align: left;
-  cursor: pointer;
-  color: #fff;
 }

@@ -23,7 +23,7 @@
 
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
-  <script src="js/josun.js"></script>
+
 
   <!-- swiper js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
@@ -56,7 +56,7 @@
         <div class="drop_menu">
           <div>
             <h3>ABOUT US</h3>
-            <p class="drop_first">JOSUN HOTELS & RESORTS</a></p>
+            <p class="drop_first"><a>JOSUN HOTELS & RESORTS</a></p>
             <p><a href="sub_introduction.html">기업소개</a></p>
             <p><a href="#">연혁</a></p>
             <p><a href="#">수상내역</a></p>
@@ -146,6 +146,7 @@
         <li class="left6"><a href="#type6">RETAIL BUSINESS</a></li>
       </ul>
     </div>
+
 
     <section class="description panel mainbg" id="type1">
       <h2 class="main_text">Experience the Difference</h2>
@@ -446,188 +447,8 @@
           </ul>
         </div>
     </section>
-
-    <section class="type7">
-      <footer id="footer">
-        <div class="ft_img">
-          <img src="img/ft1.png" alt="">
-          <img src="img/ft2.png" alt="">
-          <img src="img/ft3.png" alt="">
-          <img src="img/ft4.png" alt="">
-          <img src="img/ft5.png" alt="">
-          <img src="img/ft6.png" alt="">
-          <img src="img/ft7.png" alt="">
-          <img src="img/ft8.png" alt="">
-          <img src="img/ft9.png" alt="">
-        </div>
-        <div class="ft_bot">
-          <div class="ft_logo">
-            <img src="img/bg_logo_footer.png" alt="">
-          </div>
-          <div class="ft_info">
-            <a href="#">고객센터</a>
-            <a href="#">웹사이트 이용약관</a>
-            <a href="#">멤버십 이용약관</a>
-            <a href="#">모바일 상품권 이용약관</a>
-            <a href="#">지류 이용권 이용약관</a>
-            <a href="#">개인정보처리방침</a>
-            <div class="info_bot">
-              <a href="#">영상정보처리기기운영&middot;관리방침</a>
-              <a href="#">이메일무단수집금지</a>
-              <a href="#">CSR 핫라인</a>
-              <a href="#">사이트맵</a>
-            </div>
-            <div class="address">
-              <div class="address_top">
-                <p>서울시 중구 소공로 106</p>
-                <p>대표이사 이주희</p>
-                <p>T. 02-771-0500</p>
-              </div>
-              <div class="address_mid">
-                <p>사업자등록번호 104-81-27386 통신판매신고번호 중구 0623호</p>
-              </div>
-              <div class="address_bot">
-                <p>&copy;220 JOSUN HOTELS &middot; RESORTS Co. All rights reserved</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="sns_box">
-            <ul class="item_list" role="listbox">
-              <li><a href="https://www.shinsegaegroupinside.com/" target="_blank">신세계그룹 인사이드</a></li>
-              <li><a href="http://www.ssg.com/" target="_blank">SSG.COM</a></li>
-              <li><a href="http://tv.ssg.com/" target="_blank">신세계TV쇼핑</a></li>
-              <li><a href="http://www.shinsegae.com/" target="_blank">신세계백화점</a></li>
-              <li><a href="http://store.emart.com/" target="_blank">이마트</a></li>
-              <li><a href="http://www.emarteveryday.co.kr/" target="_blank">이마트 에브리데이</a></li>
-              <li><a href="https://emart24.co.kr/" target="_blank">이마트24</a></li>
-              <li><a href="http://www.casamiashop.com/main.casa" target="_blank">까사미아</a></li>
-              <li><a href="http://www.sikorea.co.kr/" target="_blank">신세계인터내셔날</a></li>
-              <li><a href="http://www.shinsegaefood.com/" target="_blank">신세계푸드</a></li>
-              <li><a href="http://www.shinsegae-enc.com/" target="_blank">신세계건설</a></li>
-              <li><a href="http://www.shinsegae-inc.com/" target="_blank">신세계I&amp;C</a></li>
-              <li><a href="http://www.istarbucks.co.kr/" target="_blank">스타벅스커피코리아</a></li>
-              <li><a href="http://www.ssgdfm.com/shop/main" target="_blank">신세계면세점</a></li>
-              <li><a href="http://www.premiumoutlets.co.kr/" target="_blank">신세계사이먼</a></li>
-              <li><a href="http://www.shinsegae-lnb.com/" target="_blank">신세계 L&amp;B</a></li>
-              <li><a href="http://www.shinsegaeproperty.com/ko/index.do" target="_blank">신세계 프라퍼티</a></li>
-              <li><a href="http://www.shinsegaecentralcity.com/" target="_blank">신세계센트럴시티</a></li>
-            </ul>
-            <div class="btn_family">
-              <button>FAMILY SITES</button>
-              <img src="img/chevron-down.png" alt="" class="site_down">
-            </div>
-            <div class="sns_img">
-              <img src="img/ico_ft1.png" alt="">
-              <img src="img/ico_ft2.png" alt="">
-              <img src="img/ico_ft3.png" alt="">
-              <img src="img/ico_ft4.png" alt="">
-            </div>
-          </div>
-        </div>
-      </footer>
-    </section>
-
   </div>
-
-
-
-
-
-
-
-
-  <script>
-
-    //GSAP 스크롤티거
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
-
-    document.addEventListener("DOMContentLoaded", (event) => {
-
-      let panels = gsap.utils.toArray(".panel"),
-        observer = ScrollTrigger.normalizeScroll(true),
-        scrollTween;
-
-      document.addEventListener("touchstart", e => {
-        if (scrollTween) {
-          e.preventDefault();
-          e.stopImmediatePropagation();
-        }
-      }, { capture: true, passive: false })
-
-      function goToSection(i) {
-        scrollTween = gsap.to(window, {
-          scrollTo: { y: i * innerHeight, autoKill: false },
-          onStart: () => {
-            observer.disable();
-            observer.enable();
-          },
-          duration: 1,
-          onComplete: () => scrollTween = null,
-          overwrite: true
-        });
-      }
-
-      panels.forEach((panel, i) => {
-        ScrollTrigger.create({
-          trigger: panel,
-          start: "top bottom",
-          end: "+=199%",
-          onToggle: self => self.isActive && !scrollTween && goToSection(i)
-        });
-      });
-
-
-      ScrollTrigger.create({
-        start: 0,
-        end: "#footer",
-        snap: 1 / (panels.length - 1)
-      })
-    });
-
-
-
-
-
-    /* 스와이퍼 슬라이드 */
-    $('.slider').slick({
-      infinite: false,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      prevArrow: $('.prevArrow'),
-      nextArrow: $('.nextArrow'),
-    });
-    $('.slider_lg').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      prevArrow: $('.prevArrow_lg'),
-      nextArrow: $('.nextArrow_lg'),
-    });
-    $('.slider').on('afterChange', function (event, slick, currentSlide) {
-      if (currentSlide === 0) {
-        $('.prevArrow').hide();
-      } else {
-        $('.prevArrow').show();
-      }
-      if (currentSlide === slick.slideCount - slick.options.slidesToShow) {
-        $('.nextArrow').hide();
-      } else {
-        $('.nextArrow').show();
-      }
-    });
-    $('.prevArrow').hide();
-
-    var swiper = new Swiper(".mySwiper", {
-      effect: 'fade',
-      fadeEffect: { crossFade: true },
-
-      navigation: {
-        nextEl: ".nextArrow_ht",
-        prevEl: ".prevArrow_ht"
-      }
-    });
-  </script>
+  <script src="js/josun.js"></script>
 </body>
 
 </html>
